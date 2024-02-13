@@ -18,5 +18,15 @@ Python includes a set of modules that it builds by linking to other popular open
 The command to copy-paste if you'd like to install all of these packages include `python3-dev` and `build-essential`:
 
 ```bash
-sudo apt install python3-dev build-essential libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev tk-dev uuid-dev libreadline-dev zlib1g-dev libffi-dev libssl-dev
+sudo apt install python3-dev build-essential libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev \
+tk-dev uuid-dev libreadline-dev zlib1g-dev libffi-dev libssl-dev curl gcc libev-dev libncurses-dev make wget
+```
+
+Configure python:
+```bash
+./configure \
+    --prefix=/path/to/python \
+    --enable-shared \
+    --enable-optimizations \
+    --enable-ipv6 && make && make install
 ```
