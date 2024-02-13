@@ -28,5 +28,5 @@ Configure python:
     --prefix=/path/to/python \
     --enable-shared \
     --enable-optimizations \
-    --enable-ipv6 && make && make install
+    --enable-ipv6 && make && LD_LIBRARY_PATH=. make install
 ```
