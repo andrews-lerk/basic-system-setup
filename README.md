@@ -25,8 +25,9 @@ tk-dev uuid-dev libreadline-dev zlib1g-dev libffi-dev libssl-dev curl gcc libev-
 Configure python:
 ```bash
 ./configure \
-    --prefix=/path/to/python \
+    --prefix={path/to/python} \
     --enable-shared \
     --enable-optimizations \
-    --enable-ipv6 && make && LD_LIBRARY_PATH=. make install
+    --enable-ipv6 \
+    LDFLAGS=-Wl,-rpath={path/to/python}/lib,--disable-new-dtags && make && LD_LIBRARY_PATH=. make install
 ```
