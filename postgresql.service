@@ -1,0 +1,22 @@
+[Unit]
+Description=PostgreSQL database server
+After=network.target
+
+[Service]
+Type=forking
+
+User=postgres
+Group=postgres
+
+WorkingDirectory=/path/to/pgsql
+
+Environment=PGDATA=/path/to/pgsql/data
+
+ExecStart=/path/to/pgsql/bin/pg_ctl start -D ${PGDATA} -s -w
+ExecStop=/path/to/pgsql/bin/pg_ctl stop -D ${PGDATA} -s -m fast
+ExecReload=/path/to/pgsql/bin/pg_ctl reload -D ${PGDATA} -s
+
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

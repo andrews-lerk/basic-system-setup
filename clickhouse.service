@@ -1,0 +1,20 @@
+[Unit]
+Description=Clickhouse database server
+After=network.target
+
+[Service]
+Type=forking
+
+User=user
+Group=user
+
+WorkingDirectory=/path/to/clickhouse
+
+ExecStart=/path/to/clickhouse/usr/bin/clickhouse-server start --daemon
+ExecStop=/bin/kill $MAINPID
+ExecReload=/bin/kill -15 $MAINPID
+
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
