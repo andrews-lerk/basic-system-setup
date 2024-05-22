@@ -1,0 +1,20 @@
+[Unit]
+Description=Mongodb database server
+After=network.target
+
+[Service]
+Type=forking
+
+User=user
+Group=user
+
+WorkingDirectory=/path/to/mongodb
+
+ExecStart=/path/to/mongodb/bin/mongod --config=/path/to/config.yaml
+ExecStop=/bin/kill $MAINPID
+ExecReload=/bin/kill -15 $MAINPID
+
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
