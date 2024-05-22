@@ -26,4 +26,9 @@ tk-dev uuid-dev libreadline-dev zlib1g-dev libffi-dev libssl-dev curl gcc libev-
 useradd -m -s /bin/bash postgres && passwd postgres
 ```
 3. Install sources to postgres home
-4. Chmod rights to bin dir 
+4. Chmod rights to bin dir
+### MongoDB
+1. https://www.mongodb.com/try/download/community - install from tgz
+2. https://www.mongodb.com/try/download/shell - install mongosh shell
+3. Setup config https://www.mongodb.com/docs/manual/administration/configuration/#configure-the-database
+4. setup systemd from mongo.service example
