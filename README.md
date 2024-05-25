@@ -2,7 +2,7 @@
 
 ```bash
 sudo apt install python3-dev build-essential libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev \
-tk-dev uuid-dev libreadline-dev zlib1g-dev libffi-dev libssl-dev curl gcc libev-dev libncurses-dev make wget
+tk-dev uuid-dev libreadline-dev zlib1g-dev libffi-dev libssl-dev curl gcc libev-dev libicu-dev libncurses-dev make wget
 ```
 ## Build needed python versions
 1. Install needed python sources - https://www.python.org/downloads/
